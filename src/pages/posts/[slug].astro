@@ -109,19 +109,20 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
 
       <footer>
         <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
+        <BlogPostsLink
+        heading="同じカテゴリの記事"
+        posts={postsHavingSameTag.filter(
+          (p: interfaces.Post) => p.Slug !== post.Slug
+        )}
+      />
+      <!-- <BlogPostsLink heading="おすすめの記事" posts={rankedPosts} />
+      <BlogPostsLink heading="最新の記事" posts={recentPosts} /> -->
+      <BlogTagsLink heading="カテゴリー" tags={tags} />
       </footer>
     </div>
   </div>
 
   <div slot="aside" class="aside">
-    <BlogPostsLink
-      heading="同じカテゴリの記事"
-      posts={postsHavingSameTag.filter(
-        (p: interfaces.Post) => p.Slug !== post.Slug
-      )}
-    />
-    <BlogPostsLink heading="おすすめの記事" posts={rankedPosts} />
-    <BlogPostsLink heading="最新の記事" posts={recentPosts} />
-    <BlogTagsLink heading="カテゴリー" tags={tags} />
+
   </div>
 </Layout>

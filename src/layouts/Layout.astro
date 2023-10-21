@@ -126,19 +126,20 @@ if (database.Icon && database.Icon.Type === 'file') {
             <slot name="main" />
 
             <footer>
-              <div>
+             <!--  <div>
                 <span>Powered by</span>
                 <a href="https://github.com/otoyo/astro-notion-blog"
                   >astro-notion-blog</a
-                >
+                >              
               </div>
+              -->
             </footer>
           </div>
         </main>
 
-        <aside>
+        <!-- <aside>
           <slot name="aside" />
-        </aside>
+        </aside> -->
       </div>
     </div>
 
@@ -176,7 +177,7 @@ if (database.Icon && database.Icon.Type === 'file') {
     }
   }
 
-  aside {
+  /* aside {
     order: 1;
     width: 300px;
     padding: 20px 20px;
@@ -187,7 +188,7 @@ if (database.Icon && database.Icon.Type === 'file') {
       order: 2;
       width: 100%;
     }
-  }
+  } */
 
   div.cover {
   }
@@ -201,11 +202,12 @@ if (database.Icon && database.Icon.Type === 'file') {
 
   div.content {
     padding: 20px 40px;
-  }
-  @media (max-width: 640px) {
+    max-width: 640px;
+    margin: 0 auto ; /* 中央よせ */
+  /* @media (max-width: 640px) {
     div.content {
       padding: 0 18px;
-    }
+    } */
   }
 
   main header {
