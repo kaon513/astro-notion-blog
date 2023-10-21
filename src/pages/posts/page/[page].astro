@@ -67,12 +67,13 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
         currentPage={parseInt(page, 10)}
         numberOfPages={numberOfPages}
       />
+      <BlogPostsLink heading="おすすめ" posts={rankedPosts} />
+      <BlogTagsLink heading="カテゴリー" tags={tags} />
     </footer>
   </div>
 
   <div slot="aside" class={styles.aside}>
-    <BlogPostsLink heading="おすすめ" posts={rankedPosts} />
-    <BlogTagsLink heading="カテゴリー" tags={tags} />
+
   </div>
 </Layout>
 
